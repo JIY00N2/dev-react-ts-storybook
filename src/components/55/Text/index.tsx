@@ -2,7 +2,7 @@ import './index.css';
 
 type FontSize = 'small' | 'normal' | 'large';
 
-export interface IText {
+export interface Props {
   children: React.ReactNode;
   block?: boolean;
   paragraph?: boolean;
@@ -27,7 +27,7 @@ const Text = ({
   mark,
   code,
   ...props
-}: IText) => {
+}: Props) => {
   // 태그 동적으로 사용하기
   const Tag = block ? 'div' : paragraph ? 'p' : 'span';
 
