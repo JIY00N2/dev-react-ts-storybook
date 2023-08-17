@@ -1,6 +1,9 @@
 type HeadingTag = 1 | 2 | 3 | 4 | 5 | 6;
-export interface Props {
+
+interface Children {
   children: React.ReactNode;
+}
+interface HeaderRequiredProps extends Children {
   level?: HeadingTag;
   strong?: boolean;
   underline?: boolean;
@@ -14,7 +17,7 @@ const Header = ({
   underline,
   color,
   ...props
-}: Props) => {
+}: HeaderRequiredProps) => {
   const Tag: keyof HTMLElementTagNameMap = `h${level}`;
 
   const fontStyle = {

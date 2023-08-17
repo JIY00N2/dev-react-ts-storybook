@@ -52,7 +52,7 @@ const ToggleInput = styled.input`
   }
 `;
 
-export interface Props {
+interface ToggleRequiredProps {
   name?: string;
   on?: boolean;
   disabled?: boolean;
@@ -67,7 +67,7 @@ const Toggle = ({
   disabled = false,
   onChange,
   ...props
-}: Props) => {
+}: ToggleRequiredProps) => {
   const [checked, toggle] = useToggle(on);
   const handleChange = () => {
     if (typeof toggle === 'function') {

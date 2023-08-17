@@ -2,8 +2,10 @@ import './index.css';
 
 type FontSize = 'small' | 'normal' | 'large';
 
-export interface Props {
+export type StrictPropsWithChildren<P = unknown> = P & {
   children: React.ReactNode;
+};
+interface TextRequiredProps {
   block?: boolean;
   paragraph?: boolean;
   size?: FontSize | number;
@@ -27,7 +29,7 @@ const Text = ({
   mark,
   code,
   ...props
-}: Props) => {
+}: StrictPropsWithChildren<TextRequiredProps>) => {
   // 태그 동적으로 사용하기
   const Tag = block ? 'div' : paragraph ? 'p' : 'span';
 
