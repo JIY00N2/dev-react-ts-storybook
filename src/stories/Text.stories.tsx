@@ -40,7 +40,6 @@ export const Default: Story = {
       <Text {...args}>Text</Text>
     </>
   ),
-  args: {},
 };
 
 export const Size: Story = {
