@@ -4,15 +4,15 @@ type FontSize = 'small' | 'normal' | 'large';
 
 export interface IText {
   children: React.ReactNode;
-  block: boolean;
-  paragraph: boolean;
-  size: FontSize | number;
-  strong: boolean;
-  underline: boolean;
-  delete: boolean;
-  color: string;
-  mark: boolean;
-  code: boolean;
+  block?: boolean;
+  paragraph?: boolean;
+  size?: FontSize | number;
+  strong?: boolean;
+  underline?: boolean;
+  delete?: boolean;
+  color?: string;
+  mark?: boolean;
+  code?: boolean;
 }
 
 const Text = ({
