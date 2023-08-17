@@ -6,6 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "jsxImportSource": "@emotion/react",
+    "types": ["node"],
+    "paths": {
+      "~/*": ["./src/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

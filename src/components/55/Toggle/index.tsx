@@ -4,7 +4,7 @@
 
 // user-select : 웹브라우저의 텍스트를 드래그하거나 더블 클릭하여 선택할 수 있다.
 import styled from '@emotion/styled';
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '~/hooks/useToggle';
 
 const ToggleContainer = styled.label`
   display: inline-block;
