@@ -1,6 +1,7 @@
+type HeadingTag = 1 | 2 | 3 | 4 | 5 | 6;
 export interface IHeader {
   children: React.ReactNode;
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  level?: HeadingTag;
   strong?: boolean;
   underline?: boolean;
   color?: string;
