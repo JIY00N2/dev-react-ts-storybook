@@ -1,15 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Toggle from '~/components/55/Toggle';
+import Toggle from '~/components/56/Todo/components/Toggle';
 
 const meta: Meta<typeof Toggle> = {
   component: Toggle,
   tags: ['autodocs'],
-  argTypes: {
-    disabled: { control: 'boolean' },
-  },
   args: {
-    disabled: false,
-    name: '',
     on: false,
   },
 };
