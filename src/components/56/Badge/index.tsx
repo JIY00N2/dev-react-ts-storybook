@@ -65,14 +65,14 @@ const Badge = ({
     return (
       <BadgeContainer {...props}>
         {children}
-        <Super className='dot' style={{ backgroundColor }} />
+        <Super className='dot' css={{ backgroundColor }} />
       </BadgeContainer>
     );
   }
   return (
     <BadgeContainer {...props}>
       {children}
-      <Super style={{ ...colorStyle }}>
+      <Super css={{ ...colorStyle }}>
         {maxCount && maxCount < count ? `${maxCount}+` : count}
       </Super>
     </BadgeContainer>
