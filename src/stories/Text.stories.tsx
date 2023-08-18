@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Text from '~/components/55/Text';
 
 const meta: Meta<typeof Text> = {
+  title: 'Component/Text',
   component: Text,
   tags: ['autodocs'],
   argTypes: {

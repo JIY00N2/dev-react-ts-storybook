@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import NewTaskForm from '~/components/56/Todo/components/NewTaskForm';
 
 const meta: Meta<typeof NewTaskForm> = {
+  title: 'Component/Todo/NewTaskForm',
   component: NewTaskForm,
   tags: ['autodocs'],
 };
