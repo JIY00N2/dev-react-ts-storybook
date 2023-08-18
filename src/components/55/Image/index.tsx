@@ -1,6 +1,12 @@
-import { useEffect, useRef, useState, CSSProperties } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  CSSProperties,
+  HTMLAttributes,
+} from 'react';
 
-interface Props {
+type Props = {
   lazy?: boolean;
   threshold?: number;
   src: string;
@@ -9,8 +15,8 @@ interface Props {
   width: number | string;
   height: number | string;
   alt: string;
-  mode: 'cover' | 'fill' | 'contain';
-}
+  mode?: 'cover' | 'fill' | 'contain';
+} & HTMLAttributes<HTMLImageElement>;
 
 //  옵저버 생성
 // 전역에서 만든 이유는 컴포넌트가 새로 생성되더라도 다시 생성되지 않도록
@@ -100,7 +106,7 @@ const Image = ({
       ref={imgRef}
       // 로드가 되었다면 사진 보여주고 아니면 placeholder 보여주기
       src={loaded ? src : placeholder}
-      style={{ ...imageStyle, ...props }}
+      style={{ ...imageStyle, ...props.style }}
       alt={alt}
     />
   );
