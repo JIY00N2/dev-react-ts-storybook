@@ -1,11 +1,12 @@
+import { CSSProperties, HTMLAttributes } from 'react';
 import './index.css';
 
-type FontSize = 'small' | 'normal' | 'large';
+type FontSize = 'small' | 'normal' | 'large' | number;
 
 export type StrictPropsWithChildren<P = unknown> = P & {
   children: React.ReactNode;
 };
-interface TextRequiredProps {
+type TextRequiredProps = {
   block?: boolean;
   paragraph?: boolean;
   size?: FontSize | number;
@@ -15,7 +16,7 @@ interface TextRequiredProps {
   color?: string;
   mark?: boolean;
   code?: boolean;
-}
+} & HTMLAttributes<HTMLElement>;
 
 const Text = ({
   children,
@@ -34,7 +35,7 @@ const Text = ({
   const Tag = block ? 'div' : paragraph ? 'p' : 'span';
 
   // 폰트 스타일
-  const fontStyle = {
+  const fontStyle: CSSProperties = {
     fontSize: typeof size === 'number' ? size : undefined,
     fontWeight: strong ? 'bold' : undefined,
     textDecoration: underline ? 'underline' : undefined,
