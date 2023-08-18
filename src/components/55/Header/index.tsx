@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 type HeadingTag = 1 | 2 | 3 | 4 | 5 | 6;
 
 interface Children {
@@ -20,7 +22,7 @@ const Header = ({
 }: HeaderRequiredProps) => {
   const Tag: keyof HTMLElementTagNameMap = `h${level}`;
 
-  const fontStyle = {
+  const fontStyle: CSSProperties = {
     fontWeight: strong ? 'bold' : 'normal',
     textDecoration: underline ? 'underline' : undefined,
     color,
