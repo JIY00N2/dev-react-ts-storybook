@@ -5,18 +5,22 @@ import {
   CSSProperties,
   HTMLAttributes,
 } from 'react';
+import { Combine } from '~/components/utils';
 
-type Props = {
-  lazy?: boolean;
-  threshold?: number;
-  src: string;
-  placeholder?: string;
-  block?: boolean;
-  width: number | string;
-  height: number | string;
-  alt: string;
-  mode?: 'cover' | 'fill' | 'contain';
-} & HTMLAttributes<HTMLImageElement>;
+export type ImageRequiredProps = Combine<
+  {
+    lazy?: boolean;
+    threshold?: number;
+    src: string;
+    placeholder?: string;
+    block?: boolean;
+    width?: number | string;
+    height?: number | string;
+    alt: string;
+    mode?: CSSProperties['objectFit'];
+  },
+  HTMLAttributes<HTMLImageElement>
+>;
 
 //  옵저버 생성
 // 전역에서 만든 이유는 컴포넌트가 새로 생성되더라도 다시 생성되지 않도록
@@ -59,7 +63,7 @@ const Image = ({
   alt,
   mode,
   ...props
-}: Props) => {
+}: ImageRequiredProps) => {
   // 이미지 컴포넌트가 로드 여부 판단
   const [loaded, setLoaded] = useState(false);
   // 이미지 태그에 접근

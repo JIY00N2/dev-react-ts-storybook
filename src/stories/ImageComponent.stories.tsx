@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Image from '~/components/55/Image';
+import Image from '~/components/55/ImageComponent';
 
 const meta: Meta<typeof Image> = {
   title: 'Component/Image',
