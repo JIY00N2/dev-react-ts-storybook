@@ -6,10 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "jsxImportSource": "@emotion/react",
-    "types": ["node"],
-    "paths": {
-      "~/*": ["./src/*"]
-    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -21,10 +17,10 @@
 
     /* Linting */
     "strict": true,
-    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

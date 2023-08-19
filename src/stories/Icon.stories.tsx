@@ -1,27 +1,34 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Icon from '~/components/56/Icon';
+import Icon from '../components/common/Icon';
 
 const meta: Meta<typeof Icon> = {
-  title: 'Component/Icon',
+  title: 'Common/Icon',
   component: Icon,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: { type: 'range', min: 16, max: 80 } },
-    strokeWidth: { control: { type: 'range', min: 2, max: 6 } },
-    rotate: { control: { type: 'range', min: 0, max: 360 } },
+    size: {
+      control: { type: 'range', min: 10, max: 100 },
+    },
+    strokeWidth: {
+      control: { type: 'range', min: 1, max: 4 },
+    },
+    rotate: {
+      control: { type: 'range', min: 0, max: 360 },
+    },
   },
 };
 
 export default meta;
-export type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => <Icon {...args} />,
   args: {
-    name: 'box',
+    name: 'arrow-down-circle',
     size: 16,
     strokeWidth: 2,
-    rotate: 0,
     color: '#222',
+    rotate: 0,
   },
 };

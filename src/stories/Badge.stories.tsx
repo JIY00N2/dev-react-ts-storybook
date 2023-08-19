@@ -1,32 +1,35 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Image from '~/components/55/Image';
-import Badge from '~/components/56/Badge';
+import Badge from '../components/common/Badge';
+import Image from '../components/common/Image';
 
 const meta: Meta<typeof Badge> = {
-  title: 'Component/Badge',
+  title: 'Common/Badge',
   component: Badge,
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
-  render: (args) => (
-    <Badge {...args}>
-      <Image
-        src='https://picsum.photos/60'
-        width={60}
-        height={60}
-        alt='image'
-        style={{ borderRadius: 8 }}
-      />
-    </Badge>
-  ),
+  render: (args) => {
+    return (
+      <Badge {...args}>
+        <Image
+          src="https://picsum.photos/40"
+          width={40}
+          height={40}
+          alt="icon"
+          mode="fill"
+        />
+      </Badge>
+    );
+  },
   args: {
-    count: 10,
+    count: 12,
     maxCount: 100,
-    backgroundColor: '#2d2d2d',
+    backgroundColor: '#f44',
     textColor: 'white',
     showZero: false,
     dot: false,
