@@ -5,7 +5,7 @@ import {
   CSSProperties,
   HTMLAttributes,
 } from 'react';
-import { Combine } from '~/components/utils';
+import { Combine } from '~/utils';
 
 export type ImageRequiredProps = Combine<
   {
