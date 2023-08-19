@@ -1,7 +1,13 @@
-import { CSSProperties, useEffect, useRef, useState } from 'react';
-import { BuildFCProps } from '../../types';
+import {
+  CSSProperties,
+  HTMLAttributes,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { Combine } from '../../types';
 
-type Props = BuildFCProps<
+type Props = Combine<
   {
     lazy?: boolean;
     threshold?: number;
@@ -13,7 +19,7 @@ type Props = BuildFCProps<
     alt: string;
     mode: CSSProperties['objectFit'];
   },
-  HTMLImageElement
+  HTMLAttributes<HTMLImageElement>
 >;
 
 const LOAD_IMG_EVENT_LABEL = 'loadImage';

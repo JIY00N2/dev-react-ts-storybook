@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { BuildFCProps } from '../../types';
+import { Combine } from '../../types';
+import { HTMLAttributes } from 'react';
 
-type BadgeProps = BuildFCProps<
+type BadgeProps = Combine<
   {
     count: number;
     maxCount?: number;
@@ -10,7 +11,7 @@ type BadgeProps = BuildFCProps<
     showZero?: boolean;
     dot?: boolean;
   },
-  HTMLDivElement
+  HTMLAttributes<HTMLDivElement>
 >;
 
 const Badge = ({

@@ -1,9 +1,9 @@
-import { CSSProperties, useEffect, useState } from 'react';
-import { BuildFCProps } from '../../types';
+import { CSSProperties, HTMLAttributes, useEffect, useState } from 'react';
+import { Combine } from '../../types';
 import ImageComponent from './Image';
 import { css } from '@emotion/react';
 
-type AvatarProps = BuildFCProps<
+type AvatarProps = Combine<
   {
     lazy?: boolean;
     threshold?: number;
@@ -14,7 +14,7 @@ type AvatarProps = BuildFCProps<
     alt: string;
     mode?: CSSProperties['objectFit'];
   },
-  HTMLDivElement
+  HTMLAttributes<HTMLDivElement>
 >;
 
 const Avatar = ({

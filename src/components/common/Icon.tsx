@@ -1,7 +1,8 @@
 import feather, { FeatherAttributes } from 'feather-icons';
-import { BuildFCProps } from '../../types';
+import { Combine } from '../../types';
+import { HTMLAttributes } from 'react';
 
-type IconProps = BuildFCProps<
+type IconProps = Combine<
   {
     name: keyof typeof feather.icons;
     size?: number;
@@ -9,7 +10,7 @@ type IconProps = BuildFCProps<
     color?: string;
     rotate?: number;
   },
-  HTMLElement
+  HTMLAttributes<HTMLElement>
 >;
 
 const Icon = ({
