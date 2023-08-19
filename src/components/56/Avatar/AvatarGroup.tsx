@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, CSSProperties } from 'react';
 import type { AvatarRequiredProps } from './index';
 import { Combine } from '~/utils';
+import { css } from '@emotion/react';
 
 type Props = Combine<AvatarRequiredProps, HTMLAttributes<HTMLDivElement>>;
 const AvatarGroup = ({
@@ -38,7 +39,12 @@ const AvatarGroup = ({
     });
 
   return (
-    <div css={{ paddingLeft: size / 5 }} {...props}>
+    <div
+      css={css`
+        padding-left: size / 5;
+      `}
+      {...props}
+    >
       {avatars}
     </div>
   );
