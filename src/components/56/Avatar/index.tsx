@@ -29,7 +29,7 @@ export type Shape = 'circle' | 'round' | 'square';
 export type AvatarRequiredProps = {
   type: 'Avatar';
   shape?: Shape;
-  size: number;
+  size?: number;
 };
 
 type Props = AvatarRequiredProps & ImageRequiredProps;

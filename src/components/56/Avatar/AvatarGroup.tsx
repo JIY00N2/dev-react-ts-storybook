@@ -1,9 +1,14 @@
 import React, { HTMLAttributes, CSSProperties } from 'react';
 import type { AvatarRequiredProps } from './index';
-import { Combine } from '~/components/utils';
+import { Combine } from '~/utils';
 
 type Props = Combine<AvatarRequiredProps, HTMLAttributes<HTMLDivElement>>;
-const AvatarGroup = ({ children, shape = 'circle', size, ...props }: Props) => {
+const AvatarGroup = ({
+  children,
+  shape = 'circle',
+  size = 70,
+  ...props
+}: Props) => {
   // children을 배열화 시킴
   const avatars = React.Children.toArray(children)
     .filter((element) => {
