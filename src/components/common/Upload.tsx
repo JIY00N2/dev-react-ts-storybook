@@ -1,7 +1,7 @@
-import { DragEventHandler, useRef, useState } from 'react';
-import { BuildFCProps } from '../../types';
+import { DragEventHandler, HTMLAttributes, useRef, useState } from 'react';
+import { Combine } from '../../types';
 
-type UploadProps = BuildFCProps<
+type UploadProps = Combine<
   {
     children: React.FC<{ file?: File; dragging: boolean }> | React.ReactNode;
     name: string;
@@ -10,7 +10,7 @@ type UploadProps = BuildFCProps<
     value?: File;
     onChange?: (file: File) => void;
   },
-  HTMLDivElement
+  HTMLAttributes<HTMLDivElement>
 >;
 
 const Upload = ({
