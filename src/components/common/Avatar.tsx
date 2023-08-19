@@ -2,15 +2,19 @@ import { CSSProperties, HTMLAttributes, useEffect, useState } from 'react';
 import { Combine } from '../../types';
 import ImageComponent from './Image';
 import { css } from '@emotion/react';
+import AvatarGroup from './AvatarGroup';
 
-type AvatarProps = Combine<
+export type AvatarShape = 'circle' | 'round' | 'square';
+
+export type AvatarProps = Combine<
   {
+    type: 'Avatar';
     lazy?: boolean;
     threshold?: number;
     src: string;
     placeholder: string;
     size?: number;
-    shape?: 'circle' | 'round' | 'square';
+    shape?: AvatarShape;
     alt: string;
     mode?: CSSProperties['objectFit'];
   },
@@ -72,5 +76,7 @@ const Avatar = ({
     </div>
   );
 };
+
+Avatar.Group = AvatarGroup;
 
 export default Avatar;
