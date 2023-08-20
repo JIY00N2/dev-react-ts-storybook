@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { Combine } from '~/utils';
 import styled from '@emotion/styled';
-import BreadcrumbItem from './BreadcrumbItem';
+import BreadcrumbItem, { BreadcrumbItemProps } from './BreadcrumbItem';
 
 const BreadcrumbContainer = styled.nav`
   display: inline-block;
@@ -16,7 +16,7 @@ type Props = Combine<
 const Breadcrumb = ({ children, ...props }: Props) => {
   // 배열화 시키기
   const items = React.Children.toArray(children)
-    .filter((element): element is React.ReactElement<Props> => {
+    .filter((element): element is React.ReactElement<BreadcrumbItemProps> => {
       if (
         !React.isValidElement(element) ||
         element.props.type !== 'BreadcrumbItem'
