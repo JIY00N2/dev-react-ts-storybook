@@ -1,3 +1,4 @@
-# React + TypeScript + Vite
+## Vite + React + TypeScript + Storybook
 
-React + JS 를 Vite + React + TS로 공부
+CRA + JS + React + Storybook 강의 내용을<br>
+Vite + React + TypeScript + Storybook 로 공부
