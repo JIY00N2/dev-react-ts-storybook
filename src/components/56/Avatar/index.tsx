@@ -26,7 +26,7 @@ const AvatarWrapper = styled.div<{ shape: Shape }>`
 
 export type Shape = 'circle' | 'round' | 'square';
 
-export type AvatarRequiredProps = {
+type AvatarRequiredProps = {
   type: 'Avatar';
   shape?: Shape;
   size?: number;
