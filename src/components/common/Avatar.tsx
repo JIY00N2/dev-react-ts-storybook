@@ -8,7 +8,6 @@ export type AvatarShape = 'circle' | 'round' | 'square';
 
 export type AvatarProps = Combine<
   {
-    type: 'Avatar';
     lazy?: boolean;
     threshold?: number;
     src: string;

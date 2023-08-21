@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import { Combine } from '../../types';
-import { AvatarProps, AvatarShape } from './Avatar';
+import Avatar, { AvatarProps, AvatarShape } from './Avatar';
 import { css } from '@emotion/react';
 
 type AvatarGroupProps = Combine<
@@ -23,7 +23,7 @@ const AvatarGroup = ({
       if (!React.isValidElement(element)) {
         return false;
       }
-      if (element.props.type !== 'Avatar') {
+      if (element.type !== Avatar) {
         return false;
       }
       return true;

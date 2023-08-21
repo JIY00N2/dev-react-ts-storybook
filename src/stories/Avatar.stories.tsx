@@ -41,25 +41,21 @@ export const AvatarGroup: Story = {
   render: (args) => (
     <Avatar.Group {...args}>
       <Avatar
-        type="Avatar"
         src="https://picsum.photos/70?1"
         placeholder="https://via.placeholder.com/70"
         alt="avatar"
       />
       <Avatar
-        type="Avatar"
         src="https://picsum.photos/70?2"
         placeholder="https://via.placeholder.com/70"
         alt="avatar"
       />
       <Avatar
-        type="Avatar"
         src="https://picsum.photos/70?3"
         placeholder="https://via.placeholder.com/70"
         alt="avatar"
       />
       <Avatar
-        type="Avatar"
         src="https://picsum.photos/70?4"
         placeholder="https://via.placeholder.com/70"
         alt="avatar"
