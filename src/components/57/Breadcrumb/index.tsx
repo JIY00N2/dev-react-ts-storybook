@@ -11,16 +11,13 @@ type Props = Combine<
   { children: React.ReactNode; active?: boolean },
   HTMLAttributes<HTMLDivElement>
 >;
-
+// element.props.type !== 'BreadcrumbItem'
 // 현재 내가 어디에 있는지 알려주는 컴포넌트(헨젤과 그레텔)
 const Breadcrumb = ({ children, ...props }: Props) => {
   // 배열화 시키기
   const items = React.Children.toArray(children)
     .filter((element): element is React.ReactElement<BreadcrumbItemProps> => {
-      if (
-        !React.isValidElement(element) ||
-        element.props.type !== 'BreadcrumbItem'
-      ) {
+      if (!React.isValidElement(element) || element.type !== BreadcrumbItem) {
         console.warn("Only accepts Breadcrumb. Item as it's a children.");
         return false;
       }

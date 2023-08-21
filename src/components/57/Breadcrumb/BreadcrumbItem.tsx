@@ -16,7 +16,7 @@ const Anchor = styled.a`
 
 export type BreadcrumbItemProps = Combine<
   {
-    type: 'BreadcrumbItem';
+    // type: 'BreadcrumbItem';
     children: React.ReactNode;
     href?: string;
     active?: boolean;
