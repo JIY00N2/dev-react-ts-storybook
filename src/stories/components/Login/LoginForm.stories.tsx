@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import LoginForm from '~/components/54/LoginForm/LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
-  title: 'Component/LoginForm',
+  title: 'Component/Login/LoginForm',
   component: LoginForm,
   tags: ['autodocs'],
   argTypes: { onSubmit: { action: 'onSubmit' } },

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import CardForm from '~/components/54/LoginForm/CardForm';
 
 const meta: Meta<typeof CardForm> = {
-  title: 'Component/CardForm',
+  title: 'Component/Login/CardForm',
   component: CardForm,
   tags: ['autodocs'],
 };

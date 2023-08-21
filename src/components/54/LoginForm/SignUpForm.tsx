@@ -2,7 +2,7 @@ import useForm, { FormErrors } from '~/hooks/useForm';
 import Button from './Button';
 import CardForm from './CardForm';
 import ErrorText from './ErrorText';
-import Input from './LoginInput';
+import Input from './Input';
 import Title from './Title';
 
 type SignUpValues = {

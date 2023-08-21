@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Title from '~/components/54/LoginForm/Title';
 
 const meta: Meta<typeof Title> = {
-  title: 'Component/Title',
+  title: 'Component/Login/Title',
   component: Title,
   tags: ['autodocs'],
 };
