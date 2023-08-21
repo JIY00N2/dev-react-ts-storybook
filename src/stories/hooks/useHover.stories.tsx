@@ -4,7 +4,6 @@ import useHover from '~/hooks/useHover';
 
 const meta: Meta<typeof useHover> = {
   title: 'Hook/useHover',
-  component: useHover,
   tags: ['autodocs'],
 };
 
@@ -22,7 +21,7 @@ const BoxWithHooks = () => {
   return (
     <>
       <Box ref={ref} />
-      {hover ? 'True' : 'False'}
+      {hover ? <div>Tool Tips!</div> : null}
     </>
   );
 };

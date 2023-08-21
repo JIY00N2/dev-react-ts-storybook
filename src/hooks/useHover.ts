@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const useHover = () => {
+const useHover = (): [React.RefObject<HTMLDivElement>, boolean] => {
   // hover 중 일때의 상태 true, false
   const [state, setState] = useState(false);
   // element를 받아오기
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const handelMouseOver = useCallback(() => setState(true), []);
   const handelMouseOut = useCallback(() => setState(false), []);
