@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from './LoginInput';
 import Button from './Button';
 import ErrorText from './ErrorText';
 import CardForm from './CardForm';
