@@ -8,7 +8,7 @@ const meta: Meta<typeof useHover> = {
 };
 
 export default meta;
-export type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
 const Box = styled.div`
   width: 100px;
@@ -28,3 +28,21 @@ const BoxWithHooks = () => {
 export const Default: Story = {
   render: () => <BoxWithHooks />,
 };
+
+// const Box = () => {
+//   const [ref, isHover] = useHover<HTMLDivElement>();
+//   return (
+//     <div
+//       ref={ref}
+//       css={css`
+//         width: 100px;
+//         height: 100px;
+//         background-color: ${isHover ? 'red' : 'blue'};
+//       `}
+//     />
+//   );
+// };
+
+// export const Default: StoryObj<typeof meta> = {
+//   render: () => <Box />,
+// };
