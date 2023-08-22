@@ -17,7 +17,7 @@ const Box = styled.div`
 `;
 
 const BoxWithHooks = () => {
-  const [ref, hover] = useHover();
+  const [ref, hover] = useHover<HTMLDivElement>();
   return (
     <>
       <Box ref={ref} />
@@ -28,21 +28,3 @@ const BoxWithHooks = () => {
 export const Default: Story = {
   render: () => <BoxWithHooks />,
 };
-
-// const Box = () => {
-//   const [ref, isHover] = useHover<HTMLDivElement>();
-//   return (
-//     <div
-//       ref={ref}
-//       css={css`
-//         width: 100px;
-//         height: 100px;
-//         background-color: ${isHover ? 'red' : 'blue'};
-//       `}
-//     />
-//   );
-// };
-
-// export const Default: StoryObj<typeof meta> = {
-//   render: () => <Box />,
-// };
