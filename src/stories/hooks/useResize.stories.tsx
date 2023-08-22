@@ -21,7 +21,7 @@ const Background = styled.div`
 const UseResizeHook = () => {
   // 이미지 상태 받기
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-  const ref = useResize((rect) => {
+  const ref = useResize<HTMLDivElement>((rect) => {
     setImageSize({ width: rect.width, height: rect.height });
   });
 

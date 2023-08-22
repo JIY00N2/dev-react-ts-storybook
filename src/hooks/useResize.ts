@@ -2,9 +2,11 @@ import { useRef, useEffect } from 'react';
 
 type ResizeHandler = (contentRect: DOMRectReadOnly) => void;
 
-const useResize = (handler: ResizeHandler) => {
+const useResize = <T extends HTMLElement = HTMLElement>(
+  handler: ResizeHandler
+) => {
   const savedHandler = useRef<ResizeHandler>(handler);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<T | null>(null);
 
   // 최적화
   useEffect(() => {
