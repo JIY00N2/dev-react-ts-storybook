@@ -11,7 +11,7 @@ export type FormErrors<T> = Partial<Record<keyof T, string>>;
 
 type Props<T> = {
   initialValue: T; // 초기 폼 값으로 사용할 객체의 타입 T
-  onSubmit: () => void; // 폼 제출 시 호출할 콜백 함수
+  onSubmit: (values: T) => void; // 폼 제출 시 호출할 콜백 함수
   validate: (values: T) => FormErrors<T>; //  폼 값의 유효성을 검사할 콜백 함수로, values를 받아 FormErrors<T> 타입을 반환
 };
 // T가 객체 타입이어야 함
@@ -22,27 +22,27 @@ const useForm = <T extends object>({
 }: Props<T>) => {
   const [values, setValues] = useState(initialValue);
   const [errors, setErrors] = useState<FormErrors<T>>({});
+  // 폼이 현재 로딩중인지
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     // value가 있다면, value들을 업데이트 해주는 로직
+    // 동적 키를 이용해서 값을 넣어줌
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     setIsLoading(true);
     e.preventDefault();
     // values들을 넘겨서 에러 체크
-    const newErrors = validate(values);
-    // 새로운 에러들이 없다면
+    const newErrors = validate ? validate(values) : {};
+    // 에러의 길이가 0 -> 에러가 없다
     if (Object.keys(newErrors).length === 0) {
-      setErrors({});
       // onSubmit 실행
-      onSubmit();
-    } else {
-      setErrors(newErrors);
+      await onSubmit(values);
     }
+    setErrors(newErrors);
     // 아니라면 에러 처리
     setIsLoading(false);
   };
