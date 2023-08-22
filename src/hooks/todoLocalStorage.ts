@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Tasks } from '~/components/56/Todo/contexts/TaskProvider';
 
 type SetValue = (value: Tasks) => void;
-type UseLocalStorageReturnType = [Tasks, SetValue];
+type todoLocalStorageReturnType = [Tasks, SetValue];
 
 // 스토리지는 key와 value 필요
-const useLocalStorage = (
+const todoLocalStorage = (
   key: string,
   initialValue: Tasks
-): UseLocalStorageReturnType => {
+): todoLocalStorageReturnType => {
   const [storedValue, setStoredValue] = useState<Tasks>(() => {
     try {
       const item = localStorage.getItem(key);
@@ -35,4 +35,4 @@ const useLocalStorage = (
   return [storedValue, setValue];
 };
 
-export default useLocalStorage;
+export default todoLocalStorage;

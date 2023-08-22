@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { v4 } from 'uuid';
-import useLocalStorage from '~/hooks/useLocalStorage';
+import todoLocalStorage from '~/hooks/todoLocalStorage';
 
 export type TaskProps = {
   id: string;
@@ -22,7 +22,7 @@ export const TaskContext = createContext<TaskContextType | null>(null);
 // value안의 값들이 consumer 들이 받는 값
 const TaskProvider = ({ children }: { children: React.ReactNode }) => {
   // 로컬스토리지에서 key 값 정의
-  const [tasks, setTasks] = useLocalStorage('tasks', []);
+  const [tasks, setTasks] = todoLocalStorage('tasks', []);
   // 추가 함수
   const addTask = (content: string) => {
     setTasks([...tasks, { id: v4(), content, complete: false }]);
