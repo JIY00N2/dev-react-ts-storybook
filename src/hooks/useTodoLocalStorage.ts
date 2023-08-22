@@ -5,7 +5,7 @@ type SetValue = (value: Tasks) => void;
 type todoLocalStorageReturnType = [Tasks, SetValue];
 
 // 스토리지는 key와 value 필요
-const todoLocalStorage = (
+const useTodoLocalStorage = (
   key: string,
   initialValue: Tasks
 ): todoLocalStorageReturnType => {
@@ -35,4 +35,4 @@ const todoLocalStorage = (
   return [storedValue, setValue];
 };
 
-export default todoLocalStorage;
+export default useTodoLocalStorage;
