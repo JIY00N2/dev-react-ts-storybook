@@ -1,6 +1,8 @@
-import { useCallback, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 
-const useToggle = (initialState = false): [boolean, () => void] => {
+const useToggle = (
+  initialState = false
+): [boolean, () => void, Dispatch<SetStateAction<boolean>>] => {
   const [state, setState] = useState(initialState);
   // useCallback 훅은 의존성 배열에 있는 상태 값이 변경되면 새로 메모이제이션을 함
   // useState의 setState는 값을 받을 수도 있고, 콜백을 받을 수도 있음
@@ -9,7 +11,7 @@ const useToggle = (initialState = false): [boolean, () => void] => {
   // 그냥 오버헤드만 큰 쓰레기가 되어버림
   // 근데 setState가 콜백을 받을 수 있는 걸 이용하면, 의존성 배열에 아무것도 추가할 필요가 없음
   const toggle = useCallback(() => setState((state) => !state), []);
-  return [state, toggle];
+  return [state, toggle, setState];
 };
 export default useToggle;
 
