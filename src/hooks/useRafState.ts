@@ -1,10 +1,12 @@
 import { useCallback, useRef, useState } from 'react';
 
-const useRafState = <T>(initialState: T): [T, (value: T) => void] => {
+const useRafState = <T>(
+  initialState: T
+): [T, React.Dispatch<React.SetStateAction<T>>] => {
   const frame = useRef(0);
   const [state, setState] = useState(initialState);
 
-  const setRafState = useCallback((value: T) => {
+  const setRafState = useCallback((value: React.SetStateAction<T>) => {
     cancelAnimationFrame(frame.current);
     frame.current = requestAnimationFrame(() => {
       setState(value);
