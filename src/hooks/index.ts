@@ -3,3 +3,4 @@ export { default as useHover } from './useHover';
 export { default as useKey } from './useKey';
 export { default as useScroll } from './useScroll';
 export { default as useToggle } from './useToggle';
+export { default as useKeyPress } from './useKeyPress';
