@@ -3,30 +3,12 @@ import useTimeoutFn from '../../hooks/useTimeoutFn';
 import useTimeout from '../../hooks/useTimeout';
 
 const meta: Meta = {
-  title: 'Hook/useTimeoutFn',
+  title: 'Hook/useTimeout',
 };
 
 export default meta;
 
 const ComponentA = () => {
-  const { run, clear } = useTimeoutFn(() => {
-    alert('2초가 지났습니다');
-  }, 2000);
-
-  return (
-    <div>
-      <div>useTimeoutFn 테스트</div>
-      <button onClick={run}>2초 뒤 콜백 실행</button>
-      <button onClick={clear}>클리어하기</button>
-    </div>
-  );
-};
-
-export const Default: StoryObj<typeof meta> = {
-  render: () => <ComponentA />,
-};
-
-const ComponentB = () => {
   const clear = useTimeout(() => {
     alert('2초가 지났습니다');
   }, 2000);
@@ -40,6 +22,24 @@ const ComponentB = () => {
   );
 };
 
-export const Timeout: StoryObj<typeof meta> = {
+export const Default: StoryObj<typeof meta> = {
+  render: () => <ComponentA />,
+};
+
+const ComponentB = () => {
+  const { run, clear } = useTimeoutFn(() => {
+    alert('2초가 지났습니다');
+  }, 2000);
+
+  return (
+    <div>
+      <div>useTimeoutFn 테스트</div>
+      <button onClick={run}>2초 뒤 콜백 실행</button>
+      <button onClick={clear}>클리어하기</button>
+    </div>
+  );
+};
+
+export const TimeoutFn: StoryObj<typeof meta> = {
   render: () => <ComponentB />,
 };

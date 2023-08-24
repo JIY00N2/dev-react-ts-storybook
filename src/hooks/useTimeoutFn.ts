@@ -17,6 +17,8 @@ const useTimeoutFn = (fn: () => void, ms: number) => {
     timeoutIdRef.current && clearTimeout(timeoutIdRef.current);
   }, []);
 
+  useEffect(() => clear, [clear]);
+
   return { run, clear };
 };
 
