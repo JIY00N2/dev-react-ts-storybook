@@ -26,7 +26,7 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
       // useState의 함수 처리
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;
-      setStoredValue(value);
+      setStoredValue(valueToStore);
       // if (typeof window === 'undefined') {
       //   localStorage.setItem(key, JSON.stringify(valueToStore));
       // }
