@@ -27,11 +27,11 @@ const ModalContainer = styled.div`
 
 type Props = Combine<
   {
-    children?: React.ReactNode;
+    children: React.ReactNode;
     width?: number;
     height?: number;
     visible: boolean;
-    onClose?: () => void;
+    onClose: () => void;
   },
   HTMLAttributes<HTMLElement>
 >;
