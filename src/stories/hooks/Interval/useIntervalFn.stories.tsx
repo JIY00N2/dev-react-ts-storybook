@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 const Component = () => {
   const [array, setArray] = useState<string[]>([]);
-  const [run, clear] = useIntervalFn(() => {
+  const { run, clear } = useIntervalFn(() => {
     setArray([...array, '추가됨']);
   }, 1000);
   return (

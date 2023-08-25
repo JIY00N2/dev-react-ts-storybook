@@ -10,7 +10,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Component = () => {
-  const [run, clear] = useTimeoutFn(() => {
+  const { run, clear } = useTimeoutFn(() => {
     alert('실행');
   }, 3000);
   return (

@@ -41,7 +41,7 @@ const useTimeoutFn = (fn: () => void, ms: number) => {
     clear;
   }, [clear]);
 
-  return [run, clear];
+  return { run, clear };
 };
 
 export default useTimeoutFn;
