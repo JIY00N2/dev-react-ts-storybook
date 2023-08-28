@@ -10,9 +10,9 @@ const Icon = styled.i`
 
 type Props = Combine<
   {
-    size: number;
-    color: string;
-    loading: boolean;
+    size?: number;
+    color?: string;
+    loading?: boolean;
   },
   HTMLAttributes<HTMLElement>
 >;
