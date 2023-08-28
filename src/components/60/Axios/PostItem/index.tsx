@@ -1,9 +1,9 @@
 import Header from '~/components/55/Header';
-import Text from '~/components/55/Text';
 import { useState, useCallback } from 'react';
 import Spinner from '~/components/55/Spinner';
-import { Post } from '..';
 import usePostContext from '../contexts/usePostContext';
+import { Post } from '../Page/PostsPage';
+import { Link } from 'react-router-dom';
 
 const PostItem = ({ post }: { post: Post }) => {
   // 로딩 상태 제어
@@ -26,7 +26,7 @@ const PostItem = ({ post }: { post: Post }) => {
       <Header strong level={3}>
         {post.title}
       </Header>
-      <Text>{post.body}</Text>
+      <Link to={`/posts/${post.id}`}>Detail{'>'} </Link>
       <div>
         {loading ? (
           <Spinner />
@@ -34,7 +34,6 @@ const PostItem = ({ post }: { post: Post }) => {
           <button onClick={() => handleDeletePost(post.id)}>Delete</button>
         )}
       </div>
-      {/* 버튼 클릭시 삭제 api 호출 */}
     </li>
   );
 };

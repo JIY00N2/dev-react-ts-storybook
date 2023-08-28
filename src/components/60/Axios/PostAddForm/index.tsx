@@ -1,7 +1,7 @@
 import Spinner from '~/components/55/Spinner';
 import useForm from '~/hooks/useForm';
 import usePostContext from '../contexts/usePostContext';
-import { Post } from '..';
+import { Post } from '../Page/PostsPage';
 
 type Errors = {
   title?: string;

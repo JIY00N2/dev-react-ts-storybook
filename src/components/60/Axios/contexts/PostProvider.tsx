@@ -1,5 +1,6 @@
 import { useCallback, useReducer, useEffect, createContext } from 'react';
-import { Post } from '..';
+import { Post } from '../Page/PostsPage';
+
 // 삭제하려고 index -> PostList -> PostItem props drilling 현상 발생
 // 따라서 context를 이용해서 비동기 호출을 제어하고 데이터도 관리
 

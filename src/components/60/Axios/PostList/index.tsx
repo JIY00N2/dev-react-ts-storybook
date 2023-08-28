@@ -1,5 +1,5 @@
 // Post 목록을 받아서 뿌려주기
-import { Post } from '..';
+import { Post } from '../Page/PostsPage';
 import PostItem from '../PostItem';
 import usePostContext from '../contexts/usePostContext';
 
