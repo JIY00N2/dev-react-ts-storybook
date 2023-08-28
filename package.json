@@ -12,7 +12,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "axios": "^1.5.0",
@@ -23,7 +22,6 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.11.0",
     "@storybook/addon-essentials": "^7.3.1",
     "@storybook/addon-interactions": "^7.3.1",
     "@storybook/addon-links": "^7.3.1",
