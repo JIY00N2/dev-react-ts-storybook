@@ -2,10 +2,8 @@ import { CSSProperties } from 'react';
 
 type HeadingTag = 1 | 2 | 3 | 4 | 5 | 6;
 
-interface Children {
+interface HeaderProps {
   children: React.ReactNode;
-}
-interface HeaderRequiredProps extends Children {
   level?: HeadingTag;
   strong?: boolean;
   underline?: boolean;
@@ -19,7 +17,7 @@ const Header = ({
   underline,
   color,
   ...props
-}: HeaderRequiredProps) => {
+}: HeaderProps) => {
   const Tag: keyof HTMLElementTagNameMap = `h${level}`;
 
   const fontStyle: CSSProperties = {
