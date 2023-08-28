@@ -15,9 +15,11 @@
     "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "axios": "^1.5.0",
     "feather-icons": "^4.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
