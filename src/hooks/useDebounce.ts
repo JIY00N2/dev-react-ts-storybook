@@ -9,7 +9,7 @@ const useDebounce = (
   ms: number,
   deps: React.DependencyList
 ) => {
-  const [run, clear] = useTimeoutFn(fn, ms);
+  const { run, clear } = useTimeoutFn(fn, ms);
 
   // deps가 변경될 때마다 run이 실행 됨
   // 특정 초 이내에 deps와 관련된 내용이 바뀔 경우
