@@ -20,14 +20,13 @@
 
 // export default App;
 
-/*import { Todo } from './components/56/Todo';
+import { Todo } from './components/56/Todo';
 
 function App() {
   return <Todo />;
 }
 
 export default App;
-*/
 
 // function App() {
 //   return <Pagination defaultPage={0} limit={10} total={50} />;
@@ -57,20 +56,20 @@ export default App;
 // 그러면  :파라미터이름 이걸로 안쪽에서 받을 수 있다.(PostPage)
 // * 와일드카드로 지정 404 페이지 유도 대신 젤 마지막에
 
-import { useRef } from 'react';
-import Input, { InputMethods } from './components/61/ForwardRefInput';
+// import { useRef } from 'react';
+// import Input, { InputMethods } from './components/61/ForwardRefInput';
 
-const App = () => {
-  // useRef를 통해 input을 받아 온다.
-  const inputRef = useRef<InputMethods | null>(null);
+// const App = () => {
+//   // useRef를 통해 input을 받아 온다.
+//   const inputRef = useRef<InputMethods | null>(null);
 
-  return (
-    <div>
-      <Input ref={inputRef} />
-      <button onClick={() => inputRef.current?.focus()}>Focus</button>
-      <button onClick={() => inputRef.current?.clear()}>Clear</button>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <Input ref={inputRef} />
+//       <button onClick={() => inputRef.current?.focus()}>Focus</button>
+//       <button onClick={() => inputRef.current?.clear()}>Clear</button>
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;

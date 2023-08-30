@@ -2,7 +2,9 @@
 
 import styled from '@emotion/styled';
 import { FormEvent, HTMLAttributes, useState } from 'react';
-import useTasksContext from '~/components/56/Todo/contexts/useTasksContext';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../redux/tasks';
+// import useTasksContext from '~/components/56/Todo/contexts/useTasksContext';
 
 const Form = styled.form`
   width: 400px;
@@ -34,13 +36,18 @@ const SubmitButton = styled.button`
 const NewTaskForm = ({ ...props }: HTMLAttributes<HTMLFormElement>) => {
   // input에 대한 상태
   const [task, setTask] = useState('');
-  const { addTask } = useTasksContext();
+  // const { addTask } = useTasksContext();
+
+  // useDispatch를 통해 reducer 불러오기
+  const dispatch = useDispatch();
 
   // submit을 할 때, 페이지 이동이 되지 않도록 preventDefault
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // addTask를 통해 task 추가
-    addTask(task);
+    // addTask(task);
+    // context -> reducer로 대체
+    dispatch(addTask(task));
     // 값 입력 후 input 비우기
     setTask('');
   };

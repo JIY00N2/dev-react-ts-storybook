@@ -1,8 +1,45 @@
 import styled from '@emotion/styled';
 import Toggle from './Toggle';
-import { HTMLAttributes } from 'react';
-import useTasksContext from '~/components/56/Todo/contexts/useTasksContext';
-import { TaskProps } from '~/components/56/Todo/contexts/TaskProvider';
+// import useTasksContext from '~/components/56/Todo/contexts/useTasksContext';
+import { useDispatch } from 'react-redux';
+import { removeTask, updateTask } from '../redux/tasks';
+
+type Props = {
+  id: string;
+  content: string;
+  complete: boolean;
+};
+
+// content: 어떤 task인지, complete: 완료 여부
+// remove 버튼을 누르거나 toggle이 변경되었을때, 업데이트를 해줘야 한다.
+// consumer를 통해 updateTask와 removeTask를 받아옴
+// 토글에서 onChange 이벤트가 발생하면 updateTask를 통해 id와 true/false 여부를 넘김
+// 삭제 버튼에서 onClick 이벤트가 발생하면 removeTask를 바인딩
+const Task = ({ id, content, complete, ...props }: Props) => {
+  // const { updateTask, removeTask } = useTasksContext();
+
+  // 업데이트 부분
+  const dispatch = useDispatch();
+
+  return (
+    <ListItem {...props}>
+      {/* <Toggle on={complete} onChange={() => updateTask(id, !complete)} /> */}
+      <Toggle
+        on={complete}
+        onChange={(e) =>
+          dispatch(
+            updateTask(id, content, (e.target as HTMLInputElement).checked)
+          )
+        }
+      />
+      <Content complete={complete}>{content}</Content>
+      {/* <RemoveButton onClick={() => removeTask(id)}>Remove</RemoveButton> */}
+      <RemoveButton onClick={() => dispatch(removeTask(id))}>
+        Remove
+      </RemoveButton>
+    </ListItem>
+  );
+};
 
 const ListItem = styled.li`
   display: flex;
@@ -36,23 +73,5 @@ const RemoveButton = styled.button`
   font-size: 5px;
   cursor: pointer;
 `;
-
-export type TaskRequiredProps = TaskProps & HTMLAttributes<HTMLLIElement>;
-
-// content: 어떤 task인지, complete: 완료 여부
-// remove 버튼을 누르거나 toggle이 변경되었을때, 업데이트를 해줘야 한다.
-// consumer를 통해 updateTask와 removeTask를 받아옴
-// 토글에서 onChange 이벤트가 발생하면 updateTask를 통해 id와 true/false 여부를 넘김
-// 삭제 버튼에서 onClick 이벤트가 발생하면 removeTask를 바인딩
-const Task = ({ id, content, complete, ...props }: TaskRequiredProps) => {
-  const { updateTask, removeTask } = useTasksContext();
-  return (
-    <ListItem {...props}>
-      <Toggle on={complete} onChange={() => updateTask(id, !complete)} />
-      <Content complete={complete}>{content}</Content>
-      <RemoveButton onClick={() => removeTask(id)}>Remove</RemoveButton>
-    </ListItem>
-  );
-};
 
 export default Task;
