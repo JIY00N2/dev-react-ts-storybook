@@ -35,24 +35,42 @@ export default App;
 
 // export default App;
 
-import { Routes, Route } from 'react-router';
-import DefaultTemplate from './components/60/Axios/template/DefaultTemplate';
-import { PostsPage, PostPage, NotFoundPage } from './components/60/Axios/Page';
+// import { Routes, Route } from 'react-router';
+// import DefaultTemplate from './components/60/Axios/template/DefaultTemplate';
+// import { PostsPage, PostPage, NotFoundPage } from './components/60/Axios/Page';
+
+// const App = () => {
+//   return (
+//     <DefaultTemplate>
+//       <Routes>
+//         <Route path='/' element={<h1>home</h1>}></Route>
+//         <Route path='/posts' element={<PostsPage />}></Route>
+//         <Route path='/posts/:postId' element={<PostPage />}></Route>
+//         <Route path='*' element={<NotFoundPage />}></Route>
+//       </Routes>
+//     </DefaultTemplate>
+//   );
+// };
+
+// export default App;
+// 동적인 path를 정하려면 :파라미터이름
+// 그러면  :파라미터이름 이걸로 안쪽에서 받을 수 있다.(PostPage)
+// * 와일드카드로 지정 404 페이지 유도 대신 젤 마지막에
+
+import { useRef } from 'react';
+import Input, { InputMethods } from './components/61/ForwardRefInput';
 
 const App = () => {
+  // useRef를 통해 input을 받아 온다.
+  const inputRef = useRef<InputMethods | null>(null);
+
   return (
-    <DefaultTemplate>
-      <Routes>
-        <Route path='/' element={<h1>home</h1>}></Route>
-        <Route path='/posts' element={<PostsPage />}></Route>
-        <Route path='/posts/:postId' element={<PostPage />}></Route>
-        <Route path='*' element={<NotFoundPage />}></Route>
-      </Routes>
-    </DefaultTemplate>
+    <div>
+      <Input ref={inputRef} />
+      <button onClick={() => inputRef.current?.focus()}>Focus</button>
+      <button onClick={() => inputRef.current?.clear()}>Clear</button>
+    </div>
   );
 };
 
 export default App;
-// 동적인 path를 정하려면 :파라미터이름
-// 그러면  :파라미터이름 이걸로 안쪽에서 받을 수 있다.(PostPage)
-// * 와일드카드로 지정 404 페이지 유도 대신 젤 마지막에
